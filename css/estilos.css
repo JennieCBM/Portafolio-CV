@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 1000px;
+  width: 100%;
+}
+/*------HEADER-------*/
+
+header {
+  text-shadow: 1px 1px 5px black;
+}
+.parallax-1, .parallax-2{
+  background: url(../img/computer.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  opacity: .8;
+}
+.nav{
+  transition: all 0.5s ease-out;
+}
+
+/*SOBRE MI*/
+.linkedin{
+  position: relative;
+  font-weight: bold;
+}
+#sobre-mi{
+  margin-top: 2%;
+}
+.datos{
+  border-radius: 3px;
+  max-height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.img{
+  padding: 20px;
+  min-width: 30%;
+}
+.datos p, .datos2 p{
+  font-size: 14px;
+  font-family: 'roboto' sans-serif;
+}
+.datos .titulo{
+  text-shadow: 1px 1px 3px black;
+  font-weight: 300;
+}
+.datos2{
+  border-radius: 3px;
+  min-height: 300px;
+  overflow: hidden;
+  padding: 20px;
+}
+.datos2 h3{
+  margin-top: 1%;
+}
+.img2{
+  padding: 20px;
+
+}
+.card-image span{
+  padding: 20px;
+  font-size: 20px;
+}
+hr {
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 700px) {
+  .nav a{
+    font-size: 20px;
+  }
+  .img2{
+    padding: 0;
+  }
+  .datos2 {
+    text-align: center;
+  }
+  .datos h2{
+    font-size: 20px;
+    margin-top: 1%;
+  }
+  .datos2 h3{
+    font-size: 20px;
+    margin-top: 3%;
+  }
+  .datos2 p{
+    font-size: 12px;
+    margin-top: 1%;
+  }
+}
