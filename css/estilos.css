@@ -5,7 +5,8 @@
 }
 
 body {
-  background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+ 	background-blend-mode: normal, multiply;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
@@ -41,13 +42,22 @@ header {
 }
 
 /*SOBRE MI*/
-.linkedin{
-  position: relative;
-  font-weight: bold;
-}
 #sobre-mi{
   margin-top: 2%;
 }
+
+.redes{
+  position: relative;
+  font-weight: bold;
+}
+
+.redes a i{
+  color: #ccc;
+}
+.redes a i:hover{
+  color: white;
+}
+
 .datos{
   border-radius: 3px;
   max-height: 400px;
@@ -60,11 +70,12 @@ header {
 }
 .datos p, .datos2 p{
   font-size: 14px;
-  font-family: 'roboto' sans-serif;
+  font-family: 'open sans' sans-serif;
 }
 .datos .titulo{
-  text-shadow: 1px 1px 3px black;
-  font-weight: 300;
+  text-shadow: .5px .5px 1px black;
+  font-family: 'roboto';
+  font-size: 25px;
 }
 .datos2{
   border-radius: 3px;
@@ -74,6 +85,9 @@ header {
 }
 .datos2 h3{
   margin-top: 1%;
+  font-weight: 600;
+  font-size: 25px;
+  text-shadow: .5px .5px 1px black;
 }
 .img2{
   padding: 20px;
@@ -86,9 +100,13 @@ header {
 hr {
   text-decoration: none;
 }
+.objetivo {
+  font-style: italic;
+  font-size: 12px;
+}
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .nav a{
     font-size: 20px;
   }
@@ -102,12 +120,21 @@ hr {
     font-size: 20px;
     margin-top: 1%;
   }
-  .datos2 h3{
-    font-size: 20px;
-    margin-top: 3%;
-  }
+
   .datos2 p{
-    font-size: 12px;
-    margin-top: 1%;
+    font-size: 13px;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .redes a{
+    margin: 10px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .nav a{
+    font-size: 17px;
+    font-weight: 600;
   }
 }

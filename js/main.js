@@ -26,3 +26,14 @@ let navbar = document.querySelector('.nav');
     navbar.classList.add("transparent");
   }
 })
+//------------DATOS PERSONALES-----------------
+
+//iconos - enlaces
+
+const enlaces = document.querySelectorAll('.redes a');
+
+enlaces.forEach((enlace) => {
+  enlace.addEventListener('click', (e)=>{
+    e.preventDefault();
+  })
+});
