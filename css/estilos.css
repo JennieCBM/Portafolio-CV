@@ -60,11 +60,13 @@ header {
 }
 
 .datos{
-  border-radius: 3px;
   max-height: 400px;
   overflow: hidden;
-  margin: 0 auto;
-  background: rgba(0,0,0,.3);
+  margin-top: 5%;
+  background: rgba(0,0,0,.7);
+  outline-width: 10px;;
+  outline-color: rgba(0,0,0,.3);
+  outline-style: solid;
 }
 .img{
   padding: 20px;
@@ -80,12 +82,16 @@ header {
   font-size: 25px;
 }
 .datos2{
-  border-radius: 3px;
   min-height: 300px;
   overflow: hidden;
   padding: 20px;
-  background: rgba(0,0,0,.3);
+  background: rgba(0,0,0,.7);
+  outline-width: 10px;;
+  outline-color: rgba(0,0,0,.3);
+  outline-style: solid;
+
 }
+
 .datos2 h3{
   margin-top: 1%;
   font-weight: 600;
