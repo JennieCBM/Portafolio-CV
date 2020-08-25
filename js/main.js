@@ -17,14 +17,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 
 window.addEventListener("scroll", ()=>{
-let navbar = document.querySelector('.nav');
+const navbar = document.querySelector('.nav');
+const logo = document.querySelector('.brand-logo');
+const h1= document.querySelector('h1');
+const p = h1.parentNode.children[1];
   if(window.scrollY > 3){
     navbar.classList.remove("transparent");
     navbar.style.background = "rgba(245, 220, 220, .6)";
+    h1.style.opacity = '1';
   };
   if(window.scrollY < 3){
     navbar.classList.add("transparent");
-  }
+    h1.style.opacity = "0";
+  };
+  if(window.scrollY > 6){
+    p.style.opacity = '1';
+  };
+  if(window.scrollY < 6){
+    p.style.opacity = "0";
+  };
+
 })
 //------------DATOS PERSONALES-----------------
 
