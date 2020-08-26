@@ -39,13 +39,3 @@ const p = h1.parentNode.children[1];
 
 })
 //------------DATOS PERSONALES-----------------
-
-//iconos - enlaces
-
-const enlaces = document.querySelectorAll('.redes a');
-
-enlaces.forEach((enlace) => {
-  enlace.addEventListener('click', (e)=>{
-    e.preventDefault();
-  })
-});

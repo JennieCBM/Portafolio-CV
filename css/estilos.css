@@ -33,17 +33,17 @@ header {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-
-
 }
 .bienvenido h1 {
-  margin-top: 10%;
+  margin-top: 150px;
   font-weight: bold;
   text-shadow: 1px 1px 1px #ccc;
   transition: all .8s linear;
   opacity: 0;
 }
 .bienvenido p {
+  margin-top: 1%;
+  width: 70%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -53,9 +53,8 @@ header {
   font-weight: lighter;
   opacity: 0;
   transition: .8s ease;
-
 }
-.parallax-1, .parallax-2{
+.parallax-1, .parallax-2, .parallax-3{
   position: relative;
   background: url(../img/computer.jpg);
   background-attachment: fixed;
@@ -67,12 +66,14 @@ header {
 }
 
 
-/*SOBRE MI*/
+/*------------SOBRE MI-----------------*/
 #sobre-mi{
   margin-top: 2%;
 }
 
-/*.redes{
+/*****ANIMACION ENLACES PANTALLAS PEQ*****/
+
+.redes{
   position: relative;
   font-weight: bold;
 }
@@ -83,6 +84,7 @@ header {
 }
 .redes a i:hover{
   color: white;
+  text-shadow: 5px -5px 5px black;
 }
 .redes a :hover {
   animation: icono .8s ease;
@@ -94,7 +96,7 @@ header {
   to{
     transform: rotate3d(1,1,1,360deg);
   }
-}*/
+}
 .datos{
   max-height: 400px;
   overflow: hidden;
@@ -140,7 +142,8 @@ hr{
 
 }
 
-/*ANIMACION CUBO 3D*/
+/*********ANIMACION CUBO 3D PANTALLAS GRANDES********/
+
 .animacion{
   position: flex;
   width: 100%;
@@ -157,7 +160,7 @@ hr{
   transform-style: preserve-3d;
   transform-origin: 50% 50%;
   perspective: 1000px;
-  bottom: 8%;
+  bottom: 4%;
   left: 30%;
 }
 .contenedor2{
@@ -169,7 +172,6 @@ hr{
   transform-style: preserve-3d;
   transition: 2s;
   position: relative;
-  animation: rotar 7s infinite linear;
 }
 
 .cara .item{
@@ -213,17 +215,12 @@ hr{
   transition: all 1s ease;
 }
 .cara:hover{
-  height: 15px;
-  width: 15px;
+  animation: rotar 7s infinite linear;
 }
 .cara:hover a{
   opacity: 1;
   background: rgba(0,0,0,.8);
 }
-.cara:hover a i{
-  opacity: 0;
-}
-
 
 @keyframes rotar {
   from {
@@ -234,12 +231,88 @@ hr{
   }
 }
 
+/*------Parallax seccion 2-------*/
+.lenguajes {
+  margin-bottom: 5%;
+}
+.parallax-2 h3{
+  font-family:'Lato', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #ccc;
+  transition: all .8s linear;
+  background: rgba(0,0,0);
+  margin: auto 5%;
+  margin-top: 5%;
+  border-radius: 3px;
+  padding-bottom: 1%;
+}
+.parallax-2 .container a{
+  margin: 5% auto;
+  color: white;
+  border-radius: 3px;
+  display: block;
+  max-width: 150px;
+  text-align: center;
+
+}
+.parallax-2 .container a:hover{
+  animation: icono-2 .5s ease;
+}
+@keyframes icono-2 {
+  from{
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+.parallax-2 .container p {
+  color: #ccc;
+  font-weight: bold;
+  font-family: monospace;
+  background: rgba(0,0,0,.8);
+  max-width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+.parallax-2 .container .lenguajes a i {
+  font-size: 80px;
+  padding: 20px;
+  border-radius: 3px;
+  text-align: center;
+}
+.fa-css3-alt, .fa-bootstrap {background: white;}
+.fa-js {background: black;}
+.fa-html5 {background: white; color: #e44d26}
+.materialize {width: 100px; border-radius: 3px;}
+.muuri {width: 100px; background: white; border-radius: 3px;}
+.jquery {width: 100px; background: white; border-radius: 3px;}
+
+}
+
+/****Sobre mi 2 ***/
+.contenido-2 section .container div {
+
+}
+
+/*------Parallax seccion 3-------*/
+
+
 
 /*MEDIA QUERY*/
 
 @media screen and (max-width: 800px) {
   .nav a{
     font-size: 20px;
+  }
+  .bienvenido h1{
+    font-size: 50px;
+
+  }
+  .bienvenido p {
+    font-size: 15px;
+    margin-top: 5%;
+    width: 80%;
   }
   .img2{
     padding: 0;
@@ -261,29 +334,74 @@ hr{
     margin-top: 15%;
   }
 
-  /*.redes a{
+  .redes a{
     margin: 10px;
     font-size: 20px;
   }
   .datos .redes a{
     font-size: 14px;
-  }*/
+  }
 }
 @media screen and (max-width: 700px) {
-  /*.datos .redes a{
-    font-size: 10px;
-  }*/
+
+  .bienvenido h1{
+    font-size: 45px;
+    margin-top: 180px;
+  }
+  .bienvenido p {
+    font-size: 15px;
+  }
+
   .img img{
     margin: 10px;
   }
   .animacion {
-    margin-top: 5%;
+    margin-top: 10%;
   }
+
+    .redes a{
+      margin: 10px;
+      font-size: 20px;
+    }
+    .datos .redes a{
+      font-size: 14px;
+    }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
+
+  .bienvenido h1{
+    font-size: 45px;
+    margin-top: 180px;
+  }
+  .bienvenido p {
+    font-size: 15px;
+  }
+
   .nav a{
     font-size: 17px;
     font-weight: 600;
   }
+}
+
+@media screen and (max-width: 400px) {
+
+    .bienvenido h1{
+      font-size: 30px;
+      margin-top: 180px;
+      font-weight: bolder;
+    }
+    .bienvenido p {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .redes a{
+        margin: 10px;
+        font-size: 20px;
+    }
+    .datos .redes a{
+        font-size: 14px;
+    }
+
 }
