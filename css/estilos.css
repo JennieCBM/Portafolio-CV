@@ -253,8 +253,10 @@ hr{
   display: block;
   max-width: 150px;
   text-align: center;
-
+  opacity: .5;
+  transition: all .3s ease-out;
 }
+
 .parallax-2 .container a:hover{
   animation: icono-2 .5s ease;
 }
@@ -270,10 +272,12 @@ hr{
   color: #ccc;
   font-weight: bold;
   font-family: monospace;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0);
   max-width: 70%;
   text-align: center;
   margin: 0 auto;
+  opacity: .5;
+  transition: all .3s ease;
 }
 .parallax-2 .container .lenguajes a i {
   font-size: 80px;
