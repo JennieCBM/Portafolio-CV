@@ -39,7 +39,7 @@ header {
   font-weight: bold;
   text-shadow: 1px 1px 1px #ccc;
   transition: all .8s linear;
-  opacity: 0;
+  opacity: 1;
 }
 .bienvenido p {
   margin-top: 1%;
@@ -51,7 +51,7 @@ header {
   top: 43%;
   color: white;
   font-weight: lighter;
-  opacity: 0;
+  opacity: 1;
   transition: .8s ease;
 }
 .parallax-1, .parallax-2, .parallax-3{
@@ -391,7 +391,7 @@ hr{
 @media screen and (max-width: 400px) {
 
     .bienvenido h1{
-      font-size: 30px;
+      font-size: 20px;
       margin-top: 180px;
       font-weight: bolder;
     }
