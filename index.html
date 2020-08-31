@@ -22,22 +22,23 @@
   <header>
     <div class="navbar-fixed">
       <nav class="nav-wrapper nav transparent">
-        <div class="container barra">
+        <div class="container barra" id="barra">
           <p href="#" class="brand-logo flow-text logo-t">Jennie Buitrago
           </p>
-          <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+          <a id="menu-icono" class="sidenav-trigger" data-target="slide-out">
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li><a class="activo" href="home.html">Sobre mi</a>
+            <li><a class="enlace activo" href="" id="home">Sobre mi</a>
             </li>
-            <li><a href="proyectos.html">Algunos Proyectos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="" class="enlace" id="proyectos">Algunos Proyectos</a></li>
+            <li><a href="" class="enlace" id="contacto">Contacto</a></li>
           </ul>
-          <ul class="sidenav grey lighten-2" id="mobile-menu">
-            <li><a href="#">Sobre mi</a></li>
-            <li><a href="#">Algunos Proyectos</a></li>
-            <li><a href="#">Contacto</a></li>
+          <ul class="sidenav sidenav-close" id="slide-out">
+            <li><a href="" class="enlace waves-effect waves-light" id="home">Sobre mi</a></li>
+            <li><a href="" class="enlace waves-effect waves-light" id="proyectos">Algunos Proyectos</a></li>
+            <li><a href="" class="enlace waves-effect waves-light" id="contacto">Contacto</a></li>
+            <img class="responsive-img" src="img/code.jpg" alt="">
           </ul>
         </div>
       </nav>
@@ -51,117 +52,6 @@
   </div>
 </header>
 <main id="main">
-  <!-- sobre mi -->
-  <section class="container section" id="sobre-mi">
-  <!-- card para pantallas grandes -->
-    <div class="row">
-      <div class="col l12 seccion-datos">
-        <div class="card small horizontal datos hide-on-small-only">
-          <div class="card-image">
-            <img src="imagen1.jpeg" class="responsive-img">
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <div class="center-align">
-                <p class="objetivo purple-text text-lighten-5 center-align">"Actualmente resido en la ciudad de Buenos Aires, aspiro formar parte de un equipo de trabajo que me permita desarrollar mis  habilidades y conocer nuevas tecnologías. Me apasiona aprender sobre creación de animaciones y elementos 3D en CSS, así como también los procesos de diseño y maquetación de paginas web"</p>
-              </div>
-              <br>
-              <hr>
-              <div class="animacion"><!--inicio de animacion-->
-                <div class="contenedor"><!--inicio contenedor 1-->
-                  <div class="cara">
-                    <div class="item item-1">
-                      <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-                    </div>
-                    <div class="item item-2">
-                      <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-                    </div>
-                    <div class="item item-3">
-                      <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-                    </div>
-                    <div class="item item-4">
-                      <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-                    </div>
-                    <div class="item item-5">
-                      <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-                    </div>
-                    <div class="item item-6">
-                      <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-                    </div>
-                  </div>
-                </div><!--fin contenedor 1-->
-                <div class="contenedor2"><!--inicio contenedor 2-->
-                  <div class="cara">
-                    <div class="item item-1">
-                      <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <div class="item item-2">
-                      <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <div class="item item-3">
-                      <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <div class="item item-4">
-                      <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin" target="_blank"></i></a>
-                    </div>
-                    <div class="item item-5">
-                      <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <div class="item item-6">
-                      <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div><!--fin contenedor 2-->
-              </div><!--fin de animacion-->
-            </div><!--fin contenido de card-->
-          </div>
-        </div>
-      </div>
-    </div><!--fin de row-->
-        <!-- card para pantallas medianas y pequeñas -->
-      <section class="row">
-        <div class="datos2 z-depth-4 hide-on-med-and-up">
-            <div class="col s8 offset-s2 m4 valign-wrapper ">
-              <img src="imagen1.jpeg" alt="" class="responsive-img img2">
-            </div>
-            <div class="col s10 offset-s1 m8 ">
-              <p class="objetivo purple-text text-lighten-5 center-align ">"Actualmente resido en la ciudad de Buenos Aires, aspiro formar parte de un equipo de trabajo que me permita desarrollar mis  habilidades y conocer nuevas tecnologías. Me apasiona aprender sobre creación de animaciones y elementos 3D en CSS, así como también los procesos de diseño y maquetación de paginas web"</p>
-              <br>
-              <hr>
-              <br>
-              <div class="redes center-align">
-                <a href="https://www.linkedin.com/in/jennie-buitrago-068a99190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/JennieCBM" target="_blank"><i class="fab fa-github" target="_blank"></i></a>
-              </div>
-            </div>
-
-        </div> <!--fin card-->
-      </section>
-  </section>
-  <!-- parallax -->
-  <div class=" section z-depth-3 parallax-2 center-align">
-    <div class="container">
-      <div class="lenguajes">
-        <h3>Lenguajes</h3>
-        <a href="https://es.wikipedia.org/wiki/HTML5" target="_blank"><i class="fab fa-html5"></i></a>
-        <p>HTML 5 - Intermedio </p>
-        <a href="https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada" target="_blank"class="blue-text"><i class="fab fa-css3-alt"></i></a>
-        <p>CSS - Intermedio </p>
-        <a href="https://es.wikipedia.org/wiki/JavaScript" target="_blank" class="yellow-text text-accent-3"><i class="fab fa-js"></i></a>
-        <p>JAVASCRIPT - Intermedio </p>
-        <h3>Frameworks</h3>
-        <a href="https://getbootstrap.com/" target="_blank" class="purple-text text-darken-3"><i class="fab fa-bootstrap"></i></a>
-        <p>BOOTSTRAP - Básico </p>
-        <a href="https://materializecss.com/" target="_blank"> <img src="img/materialize.jpg" class="responsive-img materialize"alt=""> </a>
-        <p>MATERIALIZE - Intermedio </p>
-        <a href="https://muuri.dev/" target="_blank"> <img src="img/muuri.jpg" class="responsive-img muuri"alt=""> </a>
-        <p>MUURI - Básico </p>
-        <h3>Librerias</h3>
-        <a href="https://jquery.com/" target="_blank"> <img src="img/jquery.jpg" class="responsive-img jquery"alt=""> </a>
-        <p>JQUERY - Básico </p>
-      </div>
-    </div>
-  </div>
 </main>
 <footer class="page-footer footer-copyright valign-wrapper transparent">
     <div class="container center-align copyright">

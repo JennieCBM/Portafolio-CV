@@ -9,10 +9,20 @@ body {
  	background-blend-mode: normal, multiply;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Lato', sans-serif;
-  min-height: 1000px;
+  font-family: 'lato', sans-serif;
+  min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+main {
+  flex: 1 0 auto;
+}
+footer div{
+  padding-bottom: 15px;
+  font-family: 'lato', monospace;
+}
+
 /*------navbar-------*/
 
 header {
@@ -21,6 +31,40 @@ header {
 }
 .nav{
   transition: all 0.5s ease-out;
+
+}
+.navbar-fixed {
+  z-index: 999;
+}
+.sidenav{
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,0,0,.2) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.8) 75%);
+}
+
+.sidenav li>a{
+  text-align: center;
+  margin-left: 0;
+  text-shadow: none;
+  font-family: 'roboto';
+  margin-top: 50px;
+  color: #ccc;
+  font-weight: bold;
+}
+.sidenav img{
+  max-width: 100px;
+  margin: 30px; auto;
+}
+#menu-icono{
+  cursor: pointer;
+}
+.barra a{
+  font-family: 'roboto';
+}
+
+.barra .activo {
+  color: rgba(199, 161, 187);
+  font-weight: bolder;
+  text-shadow: .5px 1px 1px black;
 }
 
 /*------Parallax seccion 1-------*/
@@ -40,6 +84,17 @@ header {
   text-shadow: 1px 1px 1px #ccc;
   transition: all .8s linear;
   opacity: 1;
+}
+.aparece{
+  animation: aparece 3s;
+}
+@keyframes aparece{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 .bienvenido p {
   margin-top: 1%;
@@ -150,10 +205,6 @@ hr{
   height: 30%;
   display: inline-block;
   margin-top: 20%;
-  -webkit-box-shadow: 0px -2px 0px -1px rgba(255,255,255,1);
-  -moz-box-shadow: 0px -2px 0px -1px rgba(255,255,255,1);
-  box-shadow: 0px -2px 0px -1px rgba(255,255,255,1);
-
 }
 .contenedor, .contenedor2{
   position: absolute;
@@ -161,14 +212,16 @@ hr{
   transform-origin: 50% 50%;
   perspective: 1000px;
   bottom: 4%;
-  left: 30%;
+  left: 45%;
+  transform: translateX(-50%);
+
 }
 .contenedor2{
-  left: 60%;
+  left: 55%;
 }
 .cara {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   transform-style: preserve-3d;
   transition: 2s;
   position: relative;
@@ -182,27 +235,27 @@ hr{
   flex-wrap: wrap;
 }
 .cara .item-1{
-  transform: rotateY(0deg) translateZ(15px);
+  transform: rotateY(0deg) translateZ(20px);
 }
 .cara .item-2{
-  transform: rotateX(90deg) translateZ(15px);
+  transform: rotateX(90deg) translateZ(20px);
 }
 .cara .item-3{
-  transform: rotateY(-180deg) translateZ(15px);
+  transform: rotateY(-180deg) translateZ(20px);
 }
 .cara .item-4{
-  transform: rotateY(-90deg) translateZ(15px);
+  transform: rotateY(-90deg) translateZ(20px);
 }
 .cara .item-5{
-  transform: rotateY(90deg) translateZ(15px);
+  transform: rotateY(90deg) translateZ(20px);
 }
 .cara .item-6{
-  transform: rotateX(-90deg) translateZ(15px);
+  transform: rotateX(-90deg) translateZ(20px);
 }
 .item a{
   width: 100%;
   height: 100%;
-  font-size: 15px;
+  font-size: 20px;
   color: #ccc;
   text-align: center;
   margin: 0;
@@ -253,7 +306,7 @@ hr{
   display: block;
   max-width: 150px;
   text-align: center;
-  opacity: .5;
+  opacity: 1;
   transition: all .3s ease-out;
 }
 
@@ -276,7 +329,7 @@ hr{
   max-width: 70%;
   text-align: center;
   margin: 0 auto;
-  opacity: .5;
+  opacity: 1;
   transition: all .3s ease;
 }
 .parallax-2 .container .lenguajes a i {
@@ -294,12 +347,69 @@ hr{
 
 }
 
-/****Sobre mi 2 ***/
-.contenido-2 section .container div {
 
+
+/*------Algunos traabaajos-------*/
+/*carousel*/
+.slider {
+  padding: 10px;
+}
+.carousel {
+  min-height: 300px;
+  margin-top: 20px;
+}
+.carousel .carousel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  align-items: center;
+  width: 300px;
+  height: 400px;
 }
 
-/*------Parallax seccion 3-------*/
+.carousel .carousel-item img{
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 15px;
+}
+.carousel h4 {
+    margin: 0;
+    color: #000;
+    display: inline;
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'lato', sans-serif;
+    font-weight: bolder;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255,.8);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+}
+.carousel p {
+    text-decoration: none;
+    margin: 7px 0;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.8);
+    font-family:  sans-serif;
+    margin-top: 0;
+
+    width: 100%;
+    border-radius: 0 0 15px 15px ;
+}
+.carousel p a{
+  color: #ccc;
+  font-family: 'roboto', cursive;
+  padding: 3px;
+  cursor: pointer;
+}
 
 
 
@@ -370,6 +480,9 @@ hr{
     .datos .redes a{
       font-size: 14px;
     }
+    .seccion-datos hr{
+      display: none;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -386,14 +499,18 @@ hr{
     font-size: 17px;
     font-weight: 600;
   }
+  .bienvenido h1{
+    font-size: 25px;
+  }
 }
 
 @media screen and (max-width: 400px) {
 
     .bienvenido h1{
-      font-size: 20px;
+      font-size: 25px;
       margin-top: 180px;
       font-weight: bolder;
+
     }
     .bienvenido p {
       font-size: 12px;
@@ -406,6 +523,21 @@ hr{
     }
     .datos .redes a{
         font-size: 14px;
+    }
+    .nav p{
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .parallax-2 .container a{
+      animation: icono-3 7s infinite;
+    }
+    @keyframes icono-3 {
+      from{
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to{
+        transform: rotateX(0deg) rotateY(380deg);
+      }
     }
 
 }
