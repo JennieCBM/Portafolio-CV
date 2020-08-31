@@ -7,6 +7,8 @@ const h1= document.querySelector('h1');//el titulo
 
 const parrafo = h1.parentNode.children[1];//el subtitulo
 
+const navbar = document.querySelector('.nav');//Barra de navegacion principal
+
 //declaro mi funcion ajax con dos argumentos, la url y el metodo (get por default)
 let ajax = function(url, metodo){
   let http_metodo = metodo || "GET";
@@ -41,11 +43,12 @@ let navegar = function(){
         h1.classList.add("aparece");
         parrafo.classList.add('aparece');
         if(p == "proyectos.html"){
+          main.classList.add('section-proyectos');
           //si estoy en la seccion de proyectos llamo a la funcion que da movimiento al carousel (MATERIALIZE)
           const elementos = document.querySelectorAll('.carousel');
            M.Carousel.init(elementos, {
-             dist: -50,
-             padding: 20,
+             dist: -30,
+             padding: 100,
            });//cierre funcion carousel
           //Cambio titulo y subtitulo
           h1.innerText = "PROYECTOS";
@@ -94,7 +97,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 const scrollTop = document.documentElement.scrollTop;
 window.addEventListener("scroll", ()=>{
-  const navbar = document.querySelector('.nav');
   const logo = document.querySelector('.brand-logo');
   const lenguajes = document.querySelector('.lenguajes');
 
