@@ -1,14 +1,10 @@
 //-----------SPA----------------------------
 const links = document.querySelectorAll('.enlace');//los enlaces de la navbar
-
 const main = document.querySelector('#main');//la seccion a la que se apendeara cada contenido
-
 const h1= document.querySelector('h1');//el titulo
-
 const parrafo = h1.parentNode.children[1];//el subtitulo
-
 const navbar = document.querySelector('.nav');//Barra de navegacion principal
-
+const background = document.querySelector('.parallax-1');
 //declaro mi funcion ajax con dos argumentos, la url y el metodo (get por default)
 let ajax = function(url, metodo){
   let http_metodo = metodo || "GET";
@@ -42,22 +38,55 @@ let navegar = function(){
         void (parrafo.offsetWidth);
         h1.classList.add("aparece");
         parrafo.classList.add('aparece');
+        let test;
         if(p == "proyectos.html"){
           main.classList.add('section-proyectos');
-          //si estoy en la seccion de proyectos llamo a la funcion que da movimiento al carousel (MATERIALIZE)
+          //si estoy en la seccion de proyectos llamo a las funciones respectivas
+          //funcion materialize para carousel
           const elementos = document.querySelectorAll('.carousel');
            M.Carousel.init(elementos, {
              dist: -30,
              padding: 100,
            });//cierre funcion carousel
+
+          //funcion cambio colores cubo
+          const botones = document.querySelector('.lista').children;
+          const cuadros = document.querySelectorAll('.color');
+
+          let cambiarColor = function(nuevoColor){
+              let contiene = cuadros[0].classList;
+              let colorTest = /original-*/.test(contiene) ? 'original' : /rosa-*/.test(contiene) ? 'rosa' : /verde-*/.test(contiene) ? 'verde' : /azul-*/.test(contiene) ? 'azul' : undefined ;
+              for (var cadaColor of cuadros) {
+                for ( i = 1; i < 7; i++) {
+                  cadaColor.classList.replace(`${colorTest}-${i}`,`${nuevoColor}-${i}`);
+                };//fin for
+              };//fin for of cada color
+          }//cierre funcion cambiarColor
+          for (boton of botones) {
+            boton.addEventListener('click', (e)=>{
+              let color = e.target.textContent.toLowerCase();
+              cambiarColor(color);
+            });//fin listener de click a botones
+          };//fin for botones
+
           //Cambio titulo y subtitulo
           h1.innerText = "PROYECTOS";
-          parrafo.innerText = '"En mi proceso de formación me he encontrado con la oportunidad de poner en practica la superacion de pequeños retos, algunos de los siguientes proyectos son resultado de ese proceso..."'
+          parrafo.innerText = '"En mi proceso de formación me he encontrado con la oportunidad de poner en practica la superacion de pequeños retos, algunos de los siguientes proyectos son resultado de ese proceso..."';
+          
         }else{
-          h1.innerText = "Hola! bienvenido a mi sitio.";
-          parrafo.innerText = '"Soy desarrolladora front-end en formación con conocimientos intermedios de maquetacion, orientada al desarrollo de sitios webs responsive, que permitan al usuario una experiencia fluida y dinamica..."'
+           //si no estoy en proyectos.html
+           if (p == 'contacto.html') {
+             h1.innerText = 'Contacto'
+           }else{
+             //si no estoy en proyectos.html, ni en contacto.html
+             h1.innerText = "Hola! bienvenido a mi sitio.";
+             parrafo.innerText = '"Soy desarrolladora front-end en formación con conocimientos intermedios de maquetacion, orientada al desarrollo de sitios webs responsive, que permitan al usuario una experiencia fluida y dinamica..."'
+           };
+
         };//cierre condicional proyectos
-       };//cierre condicional status 200
+      }else{};//cierre condicional status 200
+
+
       //hago un bucle para cambiar el color al enlace seleccionado
       links.forEach((link) => {
         if(location.hash !== ""){
@@ -65,9 +94,9 @@ let navegar = function(){
             link.classList.add('activo');
           }else{
             link.classList.remove('activo');
-          }//cierre condicional para agregar clase activo
-        }//cierre condicional hash
-      });//cierre foreach
+          };//cierre condicional para agregar clase activo
+        };//cierre condicional cambio de hash
+      });//cierre foreach para cambio color enlace
   });//cierre de load
 };//cierre funcion navegar
 
@@ -76,7 +105,7 @@ let pagina_inicial = ajax("home.html");
 pagina_inicial.addEventListener("load", ()=>{
   if(pagina_inicial.status == 200){
     main.innerHTML= pagina_inicial.response;
-  }
+  };
 });
 //siempre que location.hash tenga un valor, ejecuto navegar, esto permite al usuario acceder con la ruta directamente
 if(location.hash){
@@ -92,6 +121,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
    const elems = document.querySelectorAll('.sidenav');
    const instances = M.Sidenav.init(elems);
 });
+
 
 //---------------------SCROLL--------------------------------
 
