@@ -5,11 +5,11 @@
 }
 
 body {
-  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+  background-image: linear-gradient(to right, #000 0%, rgba(0,0,0,.8) 50%);
  	background-blend-mode: normal, multiply;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'lato', sans-serif;
+  font-family: 'roboto', sans-serif;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -34,10 +34,10 @@ header {
 }
 .nav{
   transition: all 0.5s ease-out;
-
 }
 .navbar-fixed {
   z-index: 999;
+  height: 0;
 }
 .sidenav{
   text-align: center;
@@ -69,24 +69,34 @@ header {
   font-weight: bolder;
   text-shadow: .5px 1px 1px black;
 }
+.fa-user-alt{
+  font-size: 40px;
+  margin-top: 10%;
+  color: linear-gradient(to right, #fff 0%, rgba(255,255,255,.8) 50%);
+}
 
 /*------Parallax seccion 1-------*/
 
 .bienvenido{
-  font-family:'Lato', sans-serif;
+  font-family:'roboto', sans-serif;
   background: rgba(0,0,0,.8);
   height: 100%;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  opacity: .8;
 }
-.bienvenido h1 {
-  margin-top: 150px;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #ccc;
+.bienvenido h1, .bienvenido h2 {
+  font-weight: bolder;
+  max-width: 90%;
+  color: grey;
+  text-shadow: 1px 1px 1px #000;
   transition: all .8s linear;
   opacity: 1;
+  margin-top:0;
 }
 .aparece{
   animation: aparece 3s;
@@ -100,16 +110,12 @@ header {
   }
 }
 .bienvenido p {
-  margin-top: 1%;
-  width: 70%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 0;
+  max-width: 90%;
   font-size: 18px;
-  top: 43%;
   color: white;
-  font-weight: lighter;
   opacity: 1;
+  text-shadow: 1px 2px 9px black;
   transition: .8s ease;
 }
 .parallax-1, .parallax-2, .parallax-3{
@@ -119,8 +125,9 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 500px;
-  opacity: .8;
+  opacity: 1;
+  min-height: 100vh;
+  height: auto;
 }
 
 
@@ -161,9 +168,12 @@ header {
   margin-top: 5%;
   background: rgba(0,0,0,.7);
 }
+
 .datos p, .datos2 p{
   font-size: 14px;
   font-family: 'open sans' sans-serif;
+  line-height: 1.2em;
+  padding-top: 1.2em;
 }
 .datos .titulo{
   text-shadow: .5px .5px 1px black;
@@ -191,10 +201,7 @@ header {
 hr {
   text-decoration: none;
 }
-.objetivo {
-  font-style: italic;
-  font-size: 12px;
-}
+
 hr{
   margin-top: 15%;
 
@@ -289,70 +296,96 @@ hr{
 }
 
 /*------Parallax seccion 2-------*/
-.lenguajes {
-  margin-bottom: 5%;
+.contenedor-img{
+  height: 400px;
 }
 .parallax-2 h3{
-  font-family:'Lato', sans-serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #ccc;
-  transition: all .8s linear;
-  background: rgba(0,0,0);
-  margin: auto 5%;
-  margin-top: 5%;
-  border-radius: 3px;
-  padding-bottom: 1%;
+  background: black;
+  width: 100%;
+  color: #CCC;
+  padding: 5px;
+  font-family: 'lato', sans-serif;
 }
-.parallax-2 .container .lenguajes a{
-  margin: 5% auto;
-  color: white;
-  border-radius: 3px;
-  display: block;
-  max-width: 150px;
-  text-align: center;
-  opacity: 1;
+.lenguajes{
+  height: 100%;
+  width:100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.lenguajes div ul{
+  transform: translateX(-200px);
+  position: absolute;
   transition: all .3s ease-out;
-}
-
-.parallax-2 .container a:hover{
-  animation: icono-2 .5s ease;
-}
-@keyframes icono-2 {
-  from{
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  to{
-    transform: rotateX(-30deg) rotateY(360deg);
-  }
-}
-.parallax-2 .container p {
   color: #ccc;
-  font-weight: bold;
-  font-family: monospace;
-  background: rgba(0,0,0);
-  max-width: 70%;
-  text-align: center;
+  font-weight: bolder;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 18px;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,0.938813025210084) 0%, rgba(0,0,0,0.8) 52%, rgba(247,247,247,.2) 100%);
+  padding: 10px;
+  width: 100%;
+  text-shadow: 1px 1px 3px black;
+}
+.imagen{
+  position: relative;
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all .3s;
+  z-index: 10;
+}
+.img{
+  background-image: url("../img/image.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 40% 40%;
+  box-shadow: 1px 2px 8px black;
+  position:absolute;
+  width: 300px;
+  height: 300px !important;
   margin: 0 auto;
+  border-radius: 10px;
+  transition: all .3s linear;
   opacity: 1;
-  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-.parallax-2 .container a i {
-  font-size: 80px;
-  padding: 20px;
-  border-radius: 3px;
-  text-align: center;
+.img-js ul li{
+  /*font-size: 80%;*/
 }
-.fa-css3-alt, .fa-bootstrap {background: white;}
-.fa-js {background: black;}
-.fa-html5 {background: white; color: #e44d26}
-.materialize {width: 100px; border-radius: 3px;}
-.muuri {width: 100px; background: white; border-radius: 3px;}
-.jquery {width: 100px; background: white; border-radius: 3px;}
-
+.imagen:hover ~ ul{
+  transform: translateX(-0%);
 }
 
-
-
+.imagen:hover{
+  opacity: 0;
+}
+.contenedor-img2{
+  background: black;
+  min-height: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.contenedor-img2 img{
+  height: 150px;
+  width: 150px;
+  
+}
+.img-materialize img{
+  border-radius: 10px;
+}
 /*------proyectos-------*/
 
 main .slider{
@@ -563,22 +596,11 @@ h4 {
   border-radius: 3px;
 }
 
-
-
 /*MEDIA QUERY*/
 
 @media screen and (max-width: 800px) {
   .nav a{
     font-size: 20px;
-  }
-  .bienvenido h1{
-    font-size: 50px;
-
-  }
-  .bienvenido p {
-    font-size: 15px;
-    margin-top: 5%;
-    width: 80%;
   }
   .img2{
     padding: 0;
@@ -590,7 +612,6 @@ h4 {
     font-size: 20px;
     margin-top: 1%;
   }
-
   .datos2 p{
     font-size: 13px;
     margin-top: 0;
@@ -609,14 +630,6 @@ h4 {
   }
 }
 @media screen and (max-width: 700px) {
-
-  .bienvenido h1{
-    font-size: 45px;
-    margin-top: 180px;
-  }
-  .bienvenido p {
-    font-size: 15px;
-  }
 
   .img img{
     margin: 10px;
@@ -639,34 +652,18 @@ h4 {
 
 @media screen and (max-width: 500px) {
 
-  .bienvenido h1{
-    font-size: 45px;
-    margin-top: 180px;
-  }
-  .bienvenido p {
-    font-size: 15px;
-  }
 
   .nav a{
     font-size: 17px;
     font-weight: 600;
   }
-  .bienvenido h1{
-    font-size: 25px;
-  }
+
 }
 
 @media screen and (max-width: 400px) {
 
-    .bienvenido h1{
-      font-size: 25px;
-      margin-top: 180px;
-      font-weight: bolder;
-
-    }
     .bienvenido p {
-      font-size: 12px;
-      font-weight: bold;
+      max-width: 95%;
     }
 
     .redes a{
@@ -677,7 +674,7 @@ h4 {
         font-size: 14px;
     }
     .nav p{
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 600;
     }
     .parallax-2 .container a{

@@ -1,8 +1,11 @@
+
 //-----------SPA----------------------------
 const links = document.querySelectorAll('.enlace');//los enlaces de la navbar
 const main = document.querySelector('#main');//la seccion a la que se apendeara cada contenido
 const h1= document.querySelector('h1');//el titulo
-const parrafo = h1.parentNode.children[1];//el subtitulo
+const h2= document.querySelector('.bienvenido h2'); //titulo para pantallas peq
+console.log(h2)
+const parrafo = document.querySelector('.objetivo-1');//el subtitulo
 const navbar = document.querySelector('.nav');//Barra de navegacion principal
 const background = document.querySelector('.parallax-1');
 //declaro mi funcion ajax con dos argumentos, la url y el metodo (get por default)
@@ -33,10 +36,13 @@ let navegar = function(){
         main.innerHTML = xhr.response;
         //***********1.2 remuevo y agrego la clase que anima el titulo y subtitulo, para evitar dividir una pequeña funcion de agregar y remover clases en dos fragmentos utilizo la propiedad offsetWidth la cual hace una lectura del ancho de un elemento en particular, al realizar dicha accion se trigerea en reflujo del DOM (se recarga un elemento especifico) y eso permite que la animacion vuelva a ejecutarse, agrego el operador void para minimizar el peso indicandole al navegador que el retorno sea undefined
         h1.classList.remove("aparece");
+        h2.classList.remove("aparece");
         parrafo.classList.remove('aparece');
         void (h1.offsetWidth);
+        void (h2.offsetWidth);
         void (parrafo.offsetWidth);
         h1.classList.add("aparece");
+        h2.classList.add("aparece");
         parrafo.classList.add('aparece');
         let test;
         if(p == "proyectos.html"){
@@ -71,16 +77,19 @@ let navegar = function(){
 
           //Cambio titulo y subtitulo
           h1.innerText = "PROYECTOS";
-          parrafo.innerText = '"En mi proceso de formación me he encontrado con la oportunidad de poner en practica la superacion de pequeños retos, algunos de los siguientes proyectos son resultado de ese proceso..."';
-          
+          parrafo.innerText = 'En mi proceso de formación me he encontrado con diversos retos y la oportunidad de poner en practica habilidades adquiridas o iniciar nuevas investigaciones, algunos de los siguientes proyectos son resultado de ese proceso.';
+          h2.innerText = "PROYECTOS";
         }else{
            //si no estoy en proyectos.html
            if (p == 'contacto.html') {
-             h1.innerText = 'Contacto'
+             h1.innerText = 'CONTACTO';
+             h2.innerText = 'CONTACTO';
+             parrafo.innerText = '';
            }else{
              //si no estoy en proyectos.html, ni en contacto.html
-             h1.innerText = "Hola! bienvenido a mi sitio.";
-             parrafo.innerText = '"Soy desarrolladora front-end en formación con conocimientos intermedios de maquetacion, orientada al desarrollo de sitios webs responsive, que permitan al usuario una experiencia fluida y dinamica..."'
+             h1.innerText = "Hola! Bienvenido a mi sitio.";
+             h2.innerText = 'Bienvenido a mi sitio.';
+             parrafo.innerText = 'Soy desarrolladora front-end en formación con conocimientos iniciales de maquetación, orientada al desarrollo de sitios webs responsive, que permitan al usuario una experiencia fluida y dinámica.'
            };
 
         };//cierre condicional proyectos
@@ -125,20 +134,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 //---------------------SCROLL--------------------------------
 
-const scrollTop = document.documentElement.scrollTop;
+let lastScrollTop = 0;
 window.addEventListener("scroll", ()=>{
   const logo = document.querySelector('.brand-logo');
   const lenguajes = document.querySelector('.lenguajes');
 
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  if (st > lastScrollTop) {
+    console.log('abajo');
+    navbar.classList.add("transparent");
+  }else{
+    console.log('arriba');
+    navbar.classList.remove("transparent");
+  }
+  lastScrollTop = st;
+
   //TRANSPARENCIA DE NAVBAR Y SALUDO
     if(window.scrollY > 20){
-      navbar.classList.remove("transparent");
       navbar.style.background = "rgba(245, 220, 220, .6)";
       parrafo.style.opacity = '0';
       h1.style.opacity = '0';
+      h2.style.opacity = '0';
     }else{
-      navbar.classList.add("transparent");
       parrafo.style.opacity = '1';
       h1.style.opacity = '1';
+      h2.style.opacity = '1';
+      navbar.classList.add("transparent");
     };
-})
+
+}, false);
