@@ -617,7 +617,6 @@ h4 {
 
 }
 .content-2{
-
   padding: 1.5em;
   font-size: 2em;
   color: #ccc;
@@ -730,6 +729,9 @@ h4 {
   }
 
 }
+.content-2 p{
+  max-width: 90%;
+}
 
 @media screen and (max-width: 400px) {
 
@@ -751,6 +753,7 @@ h4 {
     .parallax-2 .container a{
       animation: icono-3 7s infinite;
     }
+
     @keyframes icono-3 {
       from{
         transform: rotateX(0deg) rotateY(0deg);
@@ -759,5 +762,7 @@ h4 {
         transform: rotateX(0deg) rotateY(380deg);
       }
     }
-
+    .content-2 p{
+      max-width: 90%;
+    }
 }
