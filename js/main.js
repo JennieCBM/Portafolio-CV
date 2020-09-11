@@ -84,12 +84,12 @@ let navegar = function(){
            if (p == 'contacto.html') {
              h1.innerText = 'CONTACTO';
              h2.innerText = 'CONTACTO';
-             parrafo.innerText = '';
+             parrafo.innerText = '¡Gracias por visitar mi pagina! en los siguientes links puedes obtener un poco mas de información.';
            }else{
              //si no estoy en proyectos.html, ni en contacto.html
              h1.innerText = "Hola! Bienvenido a mi sitio.";
              h2.innerText = 'Bienvenido a mi sitio.';
-             parrafo.innerText = 'Soy desarrolladora front-end en formación con conocimientos iniciales de maquetación, orientada al desarrollo de sitios webs responsive, que permitan al usuario una experiencia fluida y dinámica.'
+             parrafo.innerText = 'Soy desarrolladora front-end en formación con conocimientos básicos de maquetación, orientada al desarrollo de sitios webs responsive, que permitan al usuario una experiencia fluida y dinámica.'
            };
 
         };//cierre condicional proyectos

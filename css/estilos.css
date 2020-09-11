@@ -26,7 +26,7 @@ footer div{
   font-family: 'lato', monospace;
 }
 
-/*------navbar-------*/
+/*------Principal - navbar-------*/
 
 header {
   text-shadow: 1px 1px 5px black;
@@ -75,7 +75,7 @@ header {
   color: linear-gradient(to right, #fff 0%, rgba(255,255,255,.8) 50%);
 }
 
-/*------Parallax seccion 1-------*/
+/*------Principal - Parallax seccion 1-------*/
 
 .bienvenido{
   font-family:'roboto', sans-serif;
@@ -136,7 +136,7 @@ header {
   margin-top: 2%;
 }
 
-/*****ANIMACION ENLACES PANTALLAS PEQ*****/
+/*sobre mi - ANIMACION ENLACES PANTALLAS PEQ*/
 
 .redes{
   position: relative;
@@ -207,7 +207,7 @@ hr{
 
 }
 
-/*********ANIMACION CUBO 3D PANTALLAS GRANDES********/
+/*sobre mi - ANIMACION ENLACES 3D PANTALLAS GRANDES*/
 
 .animacion{
   position: flex;
@@ -294,8 +294,9 @@ hr{
     transform: rotateX(360deg) rotateY(360deg);
   }
 }
+/*-----------ALGUNOS PROYECTOS-----------------*/
 
-/*------Parallax seccion 2-------*/
+/*------algunos proyectos - Parallax seccion 2-------*/
 .contenedor-img{
   height: 400px;
 }
@@ -362,9 +363,7 @@ hr{
   align-items: center;
   overflow: hidden;
 }
-.img-js ul li{
-  /*font-size: 80%;*/
-}
+
 .imagen:hover ~ ul{
   transform: translateX(-0%);
 }
@@ -381,17 +380,16 @@ hr{
 .contenedor-img2 img{
   height: 150px;
   width: 150px;
-  
+
 }
 .img-materialize img{
   border-radius: 10px;
 }
-/*------proyectos-------*/
 
 main .slider{
 }
 
-/*carousel*/
+/*algunos proyectos - carousel*/
 main .slider {
   height: auto;
   background: url(../img/computer2.jpg);
@@ -470,8 +468,7 @@ h4 {
   cursor: pointer;
 }
 
-
-/*CUBO GRANDE*/
+/*algunos proyectos - CUBO 3D */
 .espacio{
   margin: 100px auto;
   display:flex;
@@ -596,7 +593,81 @@ h4 {
   border-radius: 3px;
 }
 
-/*MEDIA QUERY*/
+/************Contacto***********/
+
+.element{
+  display: block;
+  height: 2em;
+  background-image: url('../img/computer2.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contacto-content h5{
+  font-size: 3.5em;
+  background: transparent;
+  text-shadow: 1px 2px 2px black;
+  color: #ccc;
+
+}
+.contacto-content-2{
+  width: 100%;
+
+}
+.content-2{
+
+  padding: 1.5em;
+  font-size: 2em;
+  color: #ccc;
+  line-height: 2em;
+  width: 100%;
+  background: rgb(0,0,0);
+}
+.content-2 p{
+  color: #ccc;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'roboto',sans-serif;
+  max-width: 60%;
+  margin: 0 auto;
+}
+.content-2 a{
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 150%;
+  background: linear-gradient(90deg, rgba(218, 215,219), rgba(0,0,0,.8), rgba(218, 215,219));
+  background-size: 400% 300%;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+}
+.content-2 input{
+  background: linear-gradient(90deg, rgba(218, 215,219,.8), rgba(0,0,0,.8), rgba(218, 215,219,.8));
+  background-size: 400% 300%;
+}
+.content-2 a:hover, .content-2 input:hover{
+  animation: fondo .8s linear;
+}
+@keyframes fondo {
+  0%{background-position: 0% 50%;}
+  100%{background-position: 100% 50%;}
+
+}
+
+.content-2 a i {
+  font-size: 100%;
+
+}
+.contacto-github{color: #000;}
+.contacto-linkedin i {color: #0e76a8;}
+.contacto-mail i {color:#051987;}
+.contacto-gmail i {color: #b23121;}
+.contacto-cv {background: #ccc; color: black; font-weight: bold; font-family: 'roboto', sans-serif;}
+
+/*-------------MEDIA QUERY-----------------*/
 
 @media screen and (max-width: 800px) {
   .nav a{
