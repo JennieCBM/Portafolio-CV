@@ -82,6 +82,21 @@ let navegar = function(){
               cambiarColor(color);
             });//fin listener de click a botones
           };//fin for botones
+          //cambio color mapamundi
+          const mapamundi = document.querySelector('.contenedor-mapamundi');
+          const anochecer = document.querySelector('.b-anochecer');
+          console.log(mapamundi)
+          anochecer.addEventListener('click', ()=>{
+            mapamundi.classList.toggle('anochecer');
+            if(mapamundi.classList.contains('anochecer')){
+              anochecer.value = 'Amanecer';
+            }else{
+              anochecer.value = 'Anochecer';
+            };
+            console.log(anochecer)
+          })
+
+
 
           //Cambio titulo y subtitulo
           h1.innerText = "PROYECTOS";
