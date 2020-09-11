@@ -608,7 +608,7 @@ h4 {
 
 /**Proyectos-mapamundi***/
 .mapamundi{
-  padding: 4em;
+  padding-bottom: 8em;
 }
 .contenedor-mapamundi{
   width: 200px;
