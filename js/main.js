@@ -4,7 +4,6 @@ const links = document.querySelectorAll('.enlace');//los enlaces de la navbar
 const main = document.querySelector('#main');//la seccion a la que se apendeara cada contenido
 const h1= document.querySelector('h1');//el titulo
 const h2= document.querySelector('.bienvenido h2'); //titulo para pantallas peq
-console.log(h2)
 const parrafo = document.querySelector('.objetivo-1');//el subtitulo
 const navbar = document.querySelector('.nav');//Barra de navegacion principal
 const background = document.querySelector('.parallax-1');
@@ -33,6 +32,10 @@ let navegar = function(){
   let xhr = ajax(p);
   xhr.addEventListener("load", ()=>{
       if(xhr.status == 200){
+        window.scroll({
+        top: 0,
+        left: 0
+      });
         main.innerHTML = xhr.response;
         //***********1.2 remuevo y agrego la clase que anima el titulo y subtitulo, para evitar dividir una pequeña funcion de agregar y remover clases en dos fragmentos utilizo la propiedad offsetWidth la cual hace una lectura del ancho de un elemento en particular, al realizar dicha accion se trigerea en reflujo del DOM (se recarga un elemento especifico) y eso permite que la animacion vuelva a ejecutarse, agrego el operador void para minimizar el peso indicandole al navegador que el retorno sea undefined
         h1.classList.remove("aparece");
@@ -60,16 +63,21 @@ let navegar = function(){
           const cuadros = document.querySelectorAll('.color');
 
           let cambiarColor = function(nuevoColor){
+              //verifico la clase actual de uno solo de los recuadros, para evitar peso innecesario (si uno tiene una clase, todos la tienen)
               let contiene = cuadros[0].classList;
+              //con una expresion regular verifico si coincide la clase seleccionada con alguna de las posibilidades, y le asigno el resultado a una variable denominada colorTest
               let colorTest = /original-*/.test(contiene) ? 'original' : /rosa-*/.test(contiene) ? 'rosa' : /verde-*/.test(contiene) ? 'verde' : /azul-*/.test(contiene) ? 'azul' : undefined ;
+              //mediante un ciclo itero cada uno de los elementos (cada cuadrito) para reemplazar su clase (resultado de la verificacion anterior) por la nueva clase asignada (el target del evento clcik )
               for (var cadaColor of cuadros) {
                 for ( i = 1; i < 7; i++) {
                   cadaColor.classList.replace(`${colorTest}-${i}`,`${nuevoColor}-${i}`);
                 };//fin for
               };//fin for of cada color
           }//cierre funcion cambiarColor
+          //con un bucle itero cada boton para asignarle un evento de click
           for (boton of botones) {
             boton.addEventListener('click', (e)=>{
+              //uso el mismo nombre del boton (en minusculas) como parametro
               let color = e.target.textContent.toLowerCase();
               cambiarColor(color);
             });//fin listener de click a botones
