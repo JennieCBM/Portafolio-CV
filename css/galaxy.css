@@ -532,7 +532,7 @@
   height: 3px;
   width: 3px;
   top: 200px;
-  animation: animStar 150s infinite linear;
+  animation: animStar 150s infinite ease;
   background: transparent;
   border-radius: 50%;
   box-shadow: 387px 1878px #fff, 760px 1564px #fff, 1487px 999px #fff,

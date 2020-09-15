@@ -92,7 +92,6 @@ header {
 }
 .bienvenido h1, .bienvenido h2 {
   font-weight: bolder;
-  max-width: 90%;
   color: grey;
   text-shadow: 1px 1px 1px #000;
   transition: all .8s linear;
@@ -112,7 +111,6 @@ header {
 }
 .bienvenido p {
   margin-top: 0;
-  max-width: 90%;
   font-size: 18px;
   color: white;
   opacity: 1;
@@ -377,13 +375,13 @@ hr{
 }
 .contenedor-img2{
   background: black;
-  min-height: 200px;
+  min-height: 150px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 .contenedor-img2 img{
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
 
 }
 .img-materialize img{
@@ -618,7 +616,7 @@ h4 {
   background: url(../img/mapamundi.jpg);
   background-size: auto 100%;
   transition: all 1s ease;
-  animation: rotacion 15s infinite linear;
+  animation: rotacion 12s infinite linear;
   box-shadow: 0px 5px 150px #ccc;
 }
 .anochecer{
