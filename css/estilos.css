@@ -694,11 +694,8 @@ h4 {
   color: black;
   -webkit-font-smoothing: antialiased;
 }
-.content-2 input{
-  background: linear-gradient(90deg, rgba(218, 215,219,.8), rgba(0,0,0,.8), rgba(218, 215,219,.8));
-  background-size: 400% 300%;
-}
-.content-2 a:hover, .content-2 input:hover{
+
+.content-2 a:hover{
   animation: fondo .8s linear;
 }
 @keyframes fondo {
