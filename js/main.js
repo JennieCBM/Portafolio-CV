@@ -161,18 +161,15 @@ let lastScrollTop = 0;
 window.addEventListener("scroll", ()=>{
   const logo = document.querySelector('.brand-logo');
   const lenguajes = document.querySelector('.lenguajes');
-
+ //TRANSPARENCIA DE NAVBAR Y SALUDO
   let st = window.pageYOffset || document.documentElement.scrollTop;
   if (st > lastScrollTop) {
-    console.log('abajo');
     navbar.classList.add("transparent");
   }else{
-    console.log('arriba');
     navbar.classList.remove("transparent");
   }
   lastScrollTop = st;
 
-  //TRANSPARENCIA DE NAVBAR Y SALUDO
     if(window.scrollY > 20){
       navbar.style.background = "rgba(245, 220, 220, .6)";
       parrafo.style.opacity = '0';

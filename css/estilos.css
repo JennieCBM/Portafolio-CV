@@ -234,6 +234,7 @@ hr{
   transform-style: preserve-3d;
   transition: 2s;
   position: relative;
+  animation: rotar 7s infinite linear;
 }
 
 .cara .item{
@@ -277,8 +278,7 @@ hr{
   transition: all 1s ease;
 }
 .cara:hover{
-  animation: rotar 7s infinite linear;
-  animation-direction: alternate;
+  animation: rotar 3s infinite ease;
 }
 .cara:hover a{
   opacity: 1;
@@ -333,6 +333,11 @@ hr{
   width: 100%;
   text-shadow: 1px 1px 3px black;
 }
+.msj{
+  color: white;
+  text-shadow: 1px 1px 1px black;
+
+}
 .imagen{
   position: relative;
   height: 100%;
@@ -342,7 +347,7 @@ hr{
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 6px;
   transition: all .3s;
   z-index: 10;
 }
@@ -356,7 +361,7 @@ hr{
   width: 300px;
   height: 300px !important;
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 6px;
   transition: all .3s linear;
   opacity: 1;
   display: flex;
@@ -382,6 +387,7 @@ hr{
 .contenedor-img2 img{
   height: 100px;
   width: 100px;
+  border-radius: 10px;
 
 }
 .img-materialize img{
@@ -749,9 +755,7 @@ h4 {
 }
 @media screen and (max-width: 700px) {
 
-  .img img{
-    margin: 10px;
-  }
+ 
   .animacion {
     margin-top: 10%;
   }
