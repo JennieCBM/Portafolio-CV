@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+}
+
+:root{
+  --humo:rgb(27, 26, 26); 
 }
 
 body {
@@ -234,7 +239,6 @@ hr{
   transform-style: preserve-3d;
   transition: 2s;
   position: relative;
-  animation: rotar 7s infinite linear;
 }
 
 .cara .item{
@@ -323,15 +327,15 @@ hr{
   position: absolute;
   transition: all .3s ease-out;
   color: #ccc;
-  font-family: monospace;
+  font-family: 'roboto', sans-serif ;
   font-weight: bolder;
   -webkit-font-smoothing: subpixel-antialiased;
-  font-size: 18px;
+  font-size: 1em;
   background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,0.938813025210084) 0%, rgba(0,0,0,0.8) 52%, rgba(247,247,247,.2) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.938813025210084) 0%, rgba(0,0,0,0.9) 62%, rgba(247,247,247,.2) 100%);
   padding: 10px;
   width: 100%;
-  text-shadow: 1px 1px 3px black;
+/*   text-shadow: 1px 1px 3px black; */
 }
 .msj{
   color: white;
@@ -394,8 +398,7 @@ hr{
   border-radius: 10px;
 }
 
-main .slider{
-}
+
 
 /*algunos proyectos - carousel*/
 main .slider {
@@ -405,14 +408,14 @@ main .slider {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 1em 0;
 }
 
 .carousel {
   width: auto;
   min-height: 300px;
   margin: 20px 0;
-  background: rgba(0,0,0,.7);
-  border-radius: 10px;
+  background: #000;
 
 }
 .carousel .carousel-item {
@@ -434,24 +437,22 @@ main .slider {
   top: 0;
   left: 0;
   z-index: -1;
-  border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: 20px 0;
-  box-shadow: 1px -1px 15px white;
+  box-shadow: 1px -1px 20px rgb(206, 201, 201, .7);
 }
 h4 {
     margin: 0;
-    color: #000;
+    color: var(--humo);
     display: inline;
     font-size: 30px;
     font-weight: 500;
     text-transform: uppercase;
     font-family: 'roboto', sans-serif;
     font-weight: bolder;
-    text-shadow: .5px .5px 3px rgba(255, 255, 255,.8);
+    text-shadow: .5px .5px 10px rgba(255, 255, 255,.5);
     cursor: pointer;
     padding: 5px;
-    border-radius: 15px 15px 0 0;
     width: 100%;
 }
 .carousel h4 a{
@@ -476,179 +477,6 @@ h4 {
   cursor: pointer;
 }
 
-/*algunos proyectos - CUBO 3D */
-
-.espacio{
-  margin: 100px auto;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 4em;
-  height: auto;
-  width: 100%;
-}
- .select-color {
-  margin: 5% auto;
-  height: 100px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
- }
- .select-color ul li{
-   display: inline;
- }
- .select-color ul li, .select-color input{
-   text-decoration: none;
-   margin: 15px auto;
-   max-width: 225px;
- }
- .select-color ul li a{
-   color: white;
-   font-family: monospace;
-   font-weight: bolder;
-   cursor: pointer;
- }
-.select-color .lista{
-  transition: opacity 1s ease-in-out .3s;
-  opacity: 0;
-}
-.select-color .btn:focus + .lista {
-  opacity: 1;
-}
-.contenedor-cubo{
-  transform-origin: 50% 50%;
-  perspective: 1000px;
-  margin: 0 auto;
-  box-shadow: 0px 5px 300px #888;
-  border-radius: 50%;
-}
-.cubo {
-  height: 200px;
-  width: 200px;
-  transform-style: preserve-3d;
-  animation: rotar 12s infinite linear;
-  animation-direction:reverse;
-}
-.cubo .item .color{
-  width: 33.33%;
-  height: 33.33%;
-  border: .5px solid black;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0px -1px 22px 4px rgba(0,0,0,0.81);
-  box-shadow: inset 0px -1px 22px 4px rgba(0,0,0,0.81);
-  transition: all 1s;
-}
-.cubo .item .color:hover{
-  background: transparent;
-}
-
-.cubo .item .original-1{ background: black;}
-.cubo .item .original-2{ background: #2a3831;}
-.cubo .item .original-3{ background: #273443;}
-.cubo .item .original-4{ background: #212021;}
-.cubo .item .original-5{ background: #d9d9d9;}
-.cubo .item .original-6{ background: #262626;}
-
-.cubo .item .rosa-1{ background: #eba2d4;}
-.cubo .item .rosa-2{ background: #ff5297;}
-.cubo .item .rosa-3{ background: #6e0b32;}
-.cubo .item .rosa-4{ background: #6e324a;}
-.cubo .item .rosa-5{ background: #ffd4e5;}
-.cubo .item .rosa-6{ background: #380117;}
-
-.cubo .item .azul-1{ background: #0a2736;}
-.cubo .item .azul-2{ background: #19b1ff;}
-.cubo .item .azul-3{ background: #70cbfa;}
-.cubo .item .azul-4{ background: #597887;}
-.cubo .item .azul-5{ background: #1f3540;}
-.cubo .item .azul-6{ background: #081e29;}
-
-.cubo .item .verde-1{ background: #167a6a;}
-.cubo .item .verde-2{ background: #1bf2d0;}
-.cubo .item .verde-3{ background: #304d38;}
-.cubo .item .verde-4{ background: #4f8c60;}
-.cubo .item .verde-5{ background: #70ff98;}
-.cubo .item .verde-6{ background: #024d17;}
-
-.cubo .item{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 3px;
-}
-.cubo .item-1{
-  transform: rotateY(0deg) translateZ(100px);
-  border: 3px solid black;
-  border-radius: 3px;
-}
-.cubo .item-2{
-  transform: rotateX(90deg) translateZ(100px);
-  border: 3px solid black;
-  border-radius: 3px;
-}
-.cubo .item-3{
-  transform: rotateY(-180deg) translateZ(100px);
-  border: 3px solid black;
-  border-radius: 3px;
-}
-.cubo .item-4{
-  transform: rotateY(-90deg) translateZ(100px);
-  border: 3px solid black;
-  border-radius: 3px;
-}
-.cubo .item-5{
-  transform: rotateY(90deg) translateZ(100px);
-  border: 3px solid black;
-  border-radius: 3px;
-}
-.cubo .item-6{
-  transform: rotateX(-90deg) translateZ(100px);
-  border: 3px solid black;
-  border-radius: 3px;
-}
-
-/**Proyectos-mapamundi***/
-
-.contenedor-mapamundi{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 0 auto;
-  background: url(../img/mapamundi.jpg);
-  background-size: auto 100%;
-  transition: all 1s ease;
-  animation: rotacion 12s infinite linear;
-  box-shadow: 0px 5px 150px #ccc;
-}
-.anochecer{
-  background: url(../img/mapamundi2.jpg);
-  background-size: auto 100%;
-}
-.sombra-mapamundi{
-  background: transparent;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  -webkit-box-shadow: inset 35px -25px 41px -3px rgba(0,0,0,0.85);
-  -moz-box-shadow: inset 35px -25px 41px -3px rgba(0,0,0,0.85);
-  box-shadow: inset 35px -25px 41px -3px rgba(0,0,0,0.85);
-}
-@keyframes rotacion{
-  0%{
-    background-position: 0%;
-  }
-  100%{
-    background-position: 100%;
-  }
-}
-.boton-anochecer{
-  margin: 5em auto;
-}
 
 /************Contacto***********/
 
