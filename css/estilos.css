@@ -40,7 +40,16 @@ header {
 }
 .nav{
   transition: all 0.5s ease-out;
+  text-align: center;
+  float: none;
 }
+.tabs{
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  height: 100%;
+}
+
 .navbar-fixed {
   z-index: 999;
   height: 0;
