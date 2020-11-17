@@ -56,7 +56,7 @@ let navegar = function(){
            M.Carousel.init(elementos, {
              dist: 0,
              padding: 30, 
-             numVisible: 6
+             numVisible: 3
            });//cierre funcion carousel
 
            //Cambio titulo y subtitulo
